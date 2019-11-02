@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import os
+cwd = os.getcwd()
 
 AUTHOR = u'anupadkh'
 SITENAME = u'SNRecruit'
 SITEURL = ''
-
+THEME = os.path.join(cwd,'templates','foundation')
 PATH = 'content'
 
 TIMEZONE = 'Asia/Kathmandu'
