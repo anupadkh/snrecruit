@@ -9,6 +9,8 @@ SITENAME = u'SNRecruit'
 SITEURL = ''
 THEME = os.path.join(cwd,'templates','foundation')
 PATH = 'content'
+ARTICLE_PATHS = ['home', 'partners']
+STATIC_PATHS = ['downloads']
 
 TIMEZONE = 'Asia/Kathmandu'
 
@@ -35,3 +37,9 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# PATH = 'content'
+# STATIC_PATHS = ['blog', 'downloads']
+# ARTICLE_PATHS = ['blog']
+# ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
+# ARTICLE_URL = '{date:%Y}/{slug}.html'
