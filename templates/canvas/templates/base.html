@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <title>{% block title %}{%endblock%} | {{ SITENAME }}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<meta name="author" content="SemiColonWeb" />
+    <!-- Stylesheets
+  	============================================= -->
+  	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+  	<link rel="stylesheet" href="theme/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="theme/style.css" type="text/css" />
+    <link rel="stylesheet" href="theme/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="theme/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  	<link rel="stylesheet" href="theme/css/magnific-popup.css" type="text/css" />
+  	<link rel="stylesheet" href="theme/css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  	<!--[if lt IE 9]>
+  		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+  	<![endif]-->
+  </head>
+  <body>
+      <header id="header" class="transparent-header dark full-header" data-sticky-class="not-dark">
+        {% block header %}{% endblock %}
+  		</header>
+      {% block slider %}{% endblock %}
+
+
+    <section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+          {% block content %}{% endblock %}
+				</div>
+			</div>
+		</section>
+    <footer id="footer" class="dark">
+			<div class="container">
+        {% block footer %}{% endblock %}
+			</div>
+      <div id="copyrights">
+				<div class="container clearfix">
+				{% block copyrights %}{% endblock %}
+				</div>
+			</div>
+    </footer>
+      <!-- Go To Top
+      	============================================= -->
+      	<div id="gotoTop" class="icon-angle-up"></div>
+
+      	<!-- External JavaScripts
+      	============================================= -->
+      	<script src="theme/js/jquery.js"></script>
+      	<script src="theme/js/plugins.js"></script>
+        {% block extrascripts %}{% endblock %}
+      	<!-- Footer Scripts
+      	============================================= -->
+      	<script src="theme/js/functions.js"></script>
+      	<script>
+      	$(function() {
+      		$( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } });
+      	});
+      </script>
+  </body>
+</html>
