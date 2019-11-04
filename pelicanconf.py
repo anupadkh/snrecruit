@@ -7,10 +7,10 @@ cwd = os.getcwd()
 AUTHOR = u'anupadkh'
 SITENAME = u'SNRecruit'
 SITEURL = ''
-THEME = os.path.join(cwd,'templates','foundation')
+THEME = os.path.join(cwd,'templates','canvas')
 PATH = 'content'
 ARTICLE_PATHS = ['home', 'partners']
-STATIC_PATHS = ['downloads']
+STATIC_PATHS = ['downloads','images']
 
 TIMEZONE = 'Asia/Kathmandu'
 
@@ -34,6 +34,14 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
+import sys
+sys.path.append('.')
+
+import my_filters
+JINJA_FILTERS = {
+                    'sliders':my_filters.find_slider,
+                    'striptags':my_filters.strip_tags,
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
