@@ -41,6 +41,8 @@ import my_filters
 JINJA_FILTERS = {
                     'sliders':my_filters.find_slider,
                     'striptags':my_filters.strip_tags,
+                    'find':my_filters.findarticle,
+                    'findbyslug': my_filters.findbyslug,
 }
 
 # Uncomment following line if you want document-relative URLs when developing
