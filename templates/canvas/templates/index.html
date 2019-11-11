@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block header %}{{articles|make_list(pages=pages, category=categories, tags=tags)}}
-<!-- {% include "header.html" %} -->
+{% include "header.html" %}
 {% endblock %}
 {% block slider %}
 {% include "slider.html" %}
