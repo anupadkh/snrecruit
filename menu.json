@@ -1,0 +1,18 @@
+{
+  'main': {
+    'items': {
+      'home',
+      'message',
+      'partner',
+      'contact',
+    },
+    'parents': {
+      'message-sn': 'message',
+      'welcome': 'message',
+    },
+  },  
+    'footer': {
+
+    },
+
+  }

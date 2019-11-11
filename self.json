@@ -1,0 +1,14 @@
+{
+  "home": {
+    'url': u'/',
+    'stitle': u'Home',
+    'title': u'HOME',
+    'icon': u'icon-home',
+  },
+  "message":{
+    'url': u'#',
+    'stitle': u'Messages',
+    'title': u'Message',
+    'icon': u'icon-message',
+  }
+}
