@@ -15,7 +15,11 @@
 			<!-- ul>li.current>a>div>
 ul>li>a>div>i.icon-gift -->
 			<ul>
-				
+				{% with y = 'y'|main_menu %}
+				{% for x,z in y %}
+					<li><a href="{{z.url}}"><icon class="{{z.icon}}"></icon>{{z.stitle}}</a>{% if z.child %}<ul> {% for m in z.child %}{% with n = m|getArticle %} <li><a href="{{n.url}}"><icon class="{{n.icon}}"></icon>{{n.stitle}}</a></li>{% endwith %}{% endfor %}</ul>{% endif %}</li>
+				{% endfor %}
+				{% endwith %}
 
 			</ul>
 
