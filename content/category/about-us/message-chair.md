@@ -3,6 +3,7 @@ STitle: Chair Message
 Date: 2019-11-03
 Category: Message
 Slug: message-chair
+Icon: message
 Summary: The success of S.N Recruiting Service (P).Ltd is built upon the basis of maintaining close good relationships combined with personal interaction and a commitment to provide a quality service to our clients and candidates. This philosophy produces the optimum understanding of our client’s business and efficient and cost effective solution to the process.
 
 Dear friends and Associates,

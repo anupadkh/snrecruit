@@ -3,8 +3,7 @@
 
 		<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-		<!-- Logo
-					============================================= -->
+		<!-- Logo============================================= -->
 		<div id="logo">
 			<a href="index.html" class="standard-logo" data-dark-logo="{{static}}/images/sn-logo.png"><img src="{{static}}/images/sn-logo.jpg" alt="Canvas Logo"></a>
 			<a href="index.html" class="retina-logo" data-dark-logo="{{static}}/images/sn-logo.png"><img src="{{static}}/images/sn-logo.jpg" alt="Canvas Logo"></a>
@@ -16,28 +15,19 @@
 			<!-- ul>li.current>a>div>
 ul>li>a>div>i.icon-gift -->
 			<ul>
-				<li class="current"><a href="#">
-						<div><i class="icon-home"></i>Home</div>
-					</a>
-				</li>
-				<li><a href="#">
-						<div><i class="icon-stacked"></i>About Us</div>
-					</a>
-					<ul>
-						{% for x in categories %}
-						<li><a href="#">
-								<div><i class="icon-gift"></i>Hi</div>
-							</a></li>
-						{% endfor %}
-					</ul>
-				</li>
+				{% with y = 'y'|main_menu %}
+				{% for x,z in y %}
+					<li><a href="{{z.url}}"><icon class="{{z.icon}}"></icon>{{z.stitle}}</a>{% if z.child %}<ul> {% for m in z.child %}{% with n = m|getArticle %} <li><a href="{{n.url}}"><icon class="{{n.icon}}"></icon>{{n.stitle}}</a></li>{% endwith %}{% endfor %}</ul>{% endif %}</li>
+				{% endfor %}
+				{% endwith %}
+
 			</ul>
 
 			<!-- Top Cart
 						============================================= -->
 			<!-- div#top-cart>a#top-cart-trigger>i.icon-shopping-cart -->
 			<div id="top-cart">
-				<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
+				<a href="#" id="top-cart-trigger"><i class="icon-home"></i><span>5</span></a>
 				<div class="top-cart-content">
 					<div class="top-cart-title">
 						<h4>Shopping Cart</h4>
@@ -69,7 +59,8 @@ ul>li>a>div>i.icon-gift -->
 						<button class="button button-3d button-small nomargin fright">View Cart</button>
 					</div>
 				</div>
-			</div><!-- #top-cart end -->
+			</div>
+			<!-- #top-cart end -->
 
 			<!-- Top Search
 						============================================= -->

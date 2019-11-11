@@ -38,11 +38,38 @@ import sys
 sys.path.append('.')
 
 import my_filters
+import render_html
 JINJA_FILTERS = {
                     'sliders':my_filters.find_slider,
                     'striptags':my_filters.strip_tags,
                     'find':my_filters.findarticle,
                     'findbyslug': my_filters.findbyslug,
+                    'see': my_filters.see,
+                    'make_list': my_filters.make_list,
+
+                    'main_menu': render_html.return_menu,
+                    'getArticle': render_html.article_get,
+}
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight',
+        },
+        'markdown.extensions.extra': {},
+        # optionally, more extensions,
+        # e.g. markdown.extensions.meta
+    },
+    'output_format': 'html5',
+}
+
+THEME_OPTIONS = {
+        'default': {
+            'header': "dark"
+        },
+        'pages': {
+            'header': "light"
+        }
 }
 
 # Uncomment following line if you want document-relative URLs when developing
