@@ -16,14 +16,19 @@
 					<!-- Primary Navigation
 					============================================= -->
 					<nav id="primary-menu">
-            <ul>
-              <li><a href="#">Home</a></li>
-            </ul>
+						<ul>
+							{% with y = 'y'|main_menu %}
+							{% for x,z in y %}
+								<li><a href="{{z.url}}"><icon class="{{z.icon}}"></icon>{{z.stitle}}</a>{% if z.child %}<ul> {% for m in z.child %}{% with n = m|getArticle %} <li><a href="{{n.url}}"><icon class="{{n.icon}}"></icon>{{n.stitle}}</a></li>{% endwith %}{% endfor %}</ul>{% endif %}</li>
+							{% endfor %}
+							{% endwith %}
+
+						</ul>
 
 
 						<!-- Top Cart
 						============================================= -->
-						<div id="top-cart">
+						<!-- <div id="top-cart">
 							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
 							<div class="top-cart-content">
 								<div class="top-cart-title">
@@ -56,7 +61,8 @@
 									<button class="button button-3d button-small nomargin fright">View Cart</button>
 								</div>
 							</div>
-						</div><!-- #top-cart end -->
+						</div> -->
+						<!-- #top-cart end -->
 
 						<!-- Top Search
 						============================================= -->

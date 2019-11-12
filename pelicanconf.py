@@ -45,10 +45,13 @@ JINJA_FILTERS = {
                     'find':my_filters.findarticle,
                     'findbyslug': my_filters.findbyslug,
                     'see': my_filters.see,
-                    'make_list': my_filters.make_list,
+                    # 'make_list': my_filters.make_list,
 
                     'main_menu': render_html.return_menu,
                     'getArticle': render_html.article_get,
+                    # 'top_menu': render_html.top_menu,
+                    # 'social_menu': render_html.social_menu,
+                    # 'contact_menu': render_html.contact_menu,
 }
 
 MARKDOWN = {
@@ -77,6 +80,9 @@ THEME_OPTIONS = {
 
 # PATH = 'content'
 # STATIC_PATHS = ['blog', 'downloads']
-# ARTICLE_PATHS = ['blog']
-# ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
+ARTICLE_SAVE_AS = 'blog/{slug}.html'
 # ARTICLE_URL = '{date:%Y}/{slug}.html'
+
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['make_list_of_articles']
+PAGE_SAVE_AS = "pages/{slug}.html"

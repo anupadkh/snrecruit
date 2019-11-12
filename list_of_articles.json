@@ -1,1 +1,44 @@
-{'articles': {'construction': {'stitle': 'Make your future', 'icon': '', 'url': 'construction.html', 'title': 'Welcome to SN Recruiting Private Limited Office'}, 'construction-2': {'stitle': 'Make your future', 'icon': '', 'url': 'construction-2.html', 'title': 'Find Your Job'}}, 'pages': {'contact': {'stitle': 'Contact', 'icon': 'icon-hello', 'url': 'pages/contact.html', 'title': 'Contact Us'}}, 'categories': {'home': ['construction', 'construction-2'], 'main': ['partner', 'welcome'], 'Message': ['message-sn']}, 'tags': {'home-slider': ['construction', 'construction-2'], 'welcome': ['welcome']}}
+{
+    "articles": {
+        "construction": {
+            "url": "blog/construction.html",
+            "stitle": "Make your future",
+            "icon": "",
+            "title": "Welcome to SN Recruiting Private Limited Office"
+        },
+        "construction-2": {
+            "url": "blog/construction-2.html",
+            "stitle": "Make your future",
+            "icon": "",
+            "title": "Find Your Job"
+        },
+        "message-sn": {
+            "url": "blog/message-sn.html",
+            "stitle": "SN Message",
+            "icon": "",
+            "title": "Message from S.N Recruiting Service (P) Ltd."
+        },
+        "partner": {
+            "url": "blog/partner.html",
+            "stitle": "Partners",
+            "icon": "",
+            "title": "Partners"
+        },
+        "welcome": {
+            "url": "blog/welcome.html",
+            "stitle": "Welcome",
+            "icon": "",
+            "title": "Welcome to SN RECRUITING SERVICE (P.) LTD."
+        }
+    },
+    "pages": {
+        "contact": {
+            "url": "pages/contact.html",
+            "stitle": "Contact",
+            "icon": "icon-hello",
+            "title": "Contact Us"
+        }
+    },
+    "categories": {},
+    "tags": {}
+}

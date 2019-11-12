@@ -8,11 +8,9 @@
 					============================================= -->
 					<div class="top-links">
 						<ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="faqs.html">FAQs</a></li>
-							<li><a href="contact.html">Contact</a></li>
-							<li><a href="login-register.html" class="sf-with-ul">Login</a>
-								<div class="top-link-section" style="display: none;">
+							{% for a in 'a'|main_menu(menu_type='top_menu') %} <li><a href="{{a.url}}">{{a.stitle}}</a></li> {% endfor %}
+							<!-- <li><a href="login-register.html" class="sf-with-ul">Login</a>
+								 <div class="top-link-section" style="display: none;">
 									<form id="top-login">
 										<div class="input-group" id="top-login-username">
 											<div class="input-group-prepend">
@@ -32,7 +30,7 @@
 										<button class="btn btn-danger btn-block" type="submit">Sign in</button>
 									</form>
 								</div>
-							</li>
+							</li> -->
 						</ul>
 					</div><!-- .top-links end -->
 
@@ -44,12 +42,12 @@
 					============================================= -->
 					<div id="top-social">
 						<ul>
-							<li><a href="#" class="si-facebook" title="Facebook" data-hover-width="108.80706787109375" style="width: 40px;"><span class="ts-icon"><i class="icon-facebook"></i></span><span class="ts-text">Facebook</span></a></li>
-							<li><a href="#" class="si-twitter" title="Twitter" data-hover-width="95.09782791137695" style="width: 40px;"><span class="ts-icon"><i class="icon-twitter"></i></span><span class="ts-text">Twitter</span></a></li>
-							<li><a href="#" class="si-dribbble" title="Dribbble" data-hover-width="103.42663192749023" style="width: 40px;"><span class="ts-icon"><i class="icon-dribbble"></i></span><span class="ts-text">Dribbble</span></a></li>
-							<li><a href="#" class="si-github" title="Github" data-hover-width="92.28532791137695" style="width: 40px;"><span class="ts-icon"><i class="icon-github-circled"></i></span><span class="ts-text">Github</span></a></li>
-							<li><a href="#" class="si-pinterest" title="Pinterest" data-hover-width="106.17119598388672" style="width: 40px;"><span class="ts-icon"><i class="icon-pinterest"></i></span><span class="ts-text">Pinterest</span></a></li>
-							<li><a href="#" class="si-instagram" title="Instagram" data-hover-width="110.79076385498047" style="width: 40px;"><span class="ts-icon"><i class="icon-instagram2"></i></span><span class="ts-text">Instagram</span></a></li>
+							{% for a in 'a'|main_menu(menu_type='social_menu') %} <li><a href="{{a.url}}" class="si-{{a.stitle|lower}}" title="{{a.stitle}}" data-hover-width="108.80706787109375" style="width: 40px;">
+								<i class="{{a.stitle|lower}}"></i></span><span class="ts-text">{{a.stitle}}</span>
+							</a></li>
+							{% endfor %}
+							{% for a in 'a'|main_menu(menu_type='contact_menu') %}
+							{% endfor %}
 							<li><a href="tel:+91.11.85412542" class="si-call" title="+91.11.85412542" data-hover-width="156.22554779052734" style="width: 40px;"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+91.11.85412542</span></a></li>
 							<li><a href="mailto:info@canvas.com" class="si-email3" title="info@canvas.com" data-hover-width="152.9375" style="width: 40px;"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@canvas.com</span></a></li>
 						</ul>
