@@ -80,9 +80,9 @@ THEME_OPTIONS = {
 
 # PATH = 'content'
 # STATIC_PATHS = ['blog', 'downloads']
-ARTICLE_SAVE_AS = '/blog/{slug}.html'
+ARTICLE_SAVE_AS = 'blog/{slug}.html'
 # ARTICLE_URL = '{date:%Y}/{slug}.html'
 
 PLUGIN_PATHS = ['plugins']
 PLUGINS = ['make_list_of_articles']
-PAGE_SAVE_AS = "/pages/{slug}.html"
+PAGE_SAVE_AS = "pages/{slug}.html"

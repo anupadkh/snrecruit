@@ -18,7 +18,7 @@ def test(generator, content):
     stitle = content.metadata.get('stitle', "")
 
     dict['articles'][id] = {
-        'url':settings.ARTICLE_SAVE_AS.format(slug=id),
+        'url':'/'+settings.ARTICLE_SAVE_AS.format(slug=id),
         'stitle':stitle,
         'icon':icon,
         'title':title,
@@ -43,7 +43,7 @@ def test_page(generator, metadata):
     stitle = metadata.get('stitle', "")
 
     dict['pages'][id] = {
-        'url':settings.PAGE_SAVE_AS.format(slug=id),
+        'url':'/'+settings.PAGE_SAVE_AS.format(slug=id),
         'stitle':stitle,
         'icon':icon,
         'title':title,
