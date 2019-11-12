@@ -16,12 +16,14 @@ def test(generator, content):
     title = content.metadata.get('title', "")
     icon = content.metadata.get('icon',"")
     stitle = content.metadata.get('stitle', "")
+    image = content.metadata.get('image',"")
 
     dict['articles'][id] = {
         'url':'/'+settings.ARTICLE_SAVE_AS.format(slug=id),
         'stitle':stitle,
         'icon':icon,
         'title':title,
+        'image':image,
     }
     file.seek(0)
     json.dump(dict,file,indent=4)
@@ -41,12 +43,14 @@ def test_page(generator, metadata):
     title = metadata.get('title', "")
     icon = metadata.get('icon',"")
     stitle = metadata.get('stitle', "")
+    image = metadata.get('image',"")
 
     dict['pages'][id] = {
         'url':'/'+settings.PAGE_SAVE_AS.format(slug=id),
         'stitle':stitle,
         'icon':icon,
         'title':title,
+        'image':image,
     }
     file.seek(0)
     json.dump(dict,file,indent=4)
