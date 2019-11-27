@@ -11,7 +11,8 @@
 {% block content %}
 	<!-- Content
 			============================================= -->
-	{% for y in articles|find(tag="home", category="graphical-info") %}
+<div class="container clearfix">
+	{% for y in articles|findbytag(tag="goals") %}
 	<div class="col_one_third">
 		<div class="feature-box fbox-border fbox-effect">
 			<div class="fbox-icon">
@@ -22,9 +23,11 @@
 		</div>
 	</div>
 	{% endfor  %}
+</div>
+
 
 	<div class="clear"></div>
-	{% with promo = articles|findbyslug(slug="promo") %}
+	{% with promo = articles|findbyslug(slug="promo") %}{% if promo %}
 	<div class="promo topmargin-lg promo-border bottommargin-lg promo-full">
 		<div class="container clearfix">
 
@@ -32,7 +35,7 @@
 			<span>{{promo.summary}}</span>
 			<a href={{promo.link}} class="button button-xlarge button-rounded">{{promo.call}}</a>
 		</div>
-	</div>
+	</div>{% endif %}
 	{% endwith %}
 	
 	<div class="container clearfix">
