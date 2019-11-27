@@ -8,96 +8,10 @@
 
 
 
+
 {% block content %}
-	<!-- Content
-			============================================= -->
-<div class="container clearfix">
-	{% for y in articles|findbytag(tag="goals") %}
-	<div class="col_one_third">
-		<div class="feature-box fbox-border fbox-effect">
-			<div class="fbox-icon">
-				<a href="#"><i class="{{y.icon}} i-alt"></i></a>
-			</div>
-			<h3>{{y.title}}</h3>
-			{{y.content}}
-		</div>
-	</div>
-	{% endfor  %}
-</div>
 
-
-	<div class="clear"></div>
-	{% with promo = articles|findbyslug(slug="promo") %}{% if promo %}
-	<div class="promo topmargin-lg promo-border bottommargin-lg promo-full">
-		<div class="container clearfix">
-
-			<h3>{{promo.title}}</h3>
-			<span>{{promo.summary}}</span>
-			<a href={{promo.link}} class="button button-xlarge button-rounded">{{promo.call}}</a>
-		</div>
-	</div>{% endif %}
-	{% endwith %}
-	
-	<div class="container clearfix">
-		{% with side_nav = articles|findbytag(tag='side') %}
-		<div id="side-navigation">
-
-			<div class="col_one_third nobottommargin">
-
-				<ul class="sidenav">
-					{% for art in side_nav %}
-					<li><a href="#{{art.slug}}"><i class="{{art.icon}}"></i>{{art.stitle}}<i class="icon-chevron-right"></i></a></li>
-					{% endfor %}
-				</ul>
-
-			</div>
-			
-			<div class="col_two_third col_last nobottommargin">
-				{% for art in side_nav %}
-				<div id="{{art.slug}}">
-					<div class="heading-block">
-						<h3>{{art.title}}</h3>
-						<span>{{art.stitle}}</span>
-					</div>
-					<img src="{{art.image}}" alt="{{art.image_desciption}}" class="alignleft" style="max-width: 320px;">
-					{{art.content}}
-				</div>
-				{% endfor %}
-			</div>
-
-		</div>
-		{% endwith %}
-
-
-		<div class="clear"></div>
-		<div class="line"></div>
-		{% with partners=articles|findimagelist(slug="company_docs") %}
-		<h4 class="center">{{partners.title}}</h4>
-			<div class="container clearfix">
-			
-				<!-- <div class="postcontent nobottommargin"> -->
-					<div class="col_full masonry-thumbs grid-2" data-lightbox="gallery">
-		<!-- <ul class="clients-grid grid-6 bottommargin clearfix"> -->
-		
-			{% for art in partners %}
-			<a href="/images/{{art}}" data-lightbox="gallery-item"><img class="image_fade" src="/images/{{art}}" alt="{{partners.title}}"></a>
-			<!-- <li><a href="#"><img src="/images/{{art}}" alt="{{partners.title}}"></a></li> -->
-			{% endfor %}
-		<!-- </ul> -->
-				</div>
-			{% endwith %}
-			<!-- </div> -->
-		</div>
-		
-
-	</div>
-	{% with message=articles|findbyslug(slug="broadcast-message") %}
-	<a href="{{message.url}}" class="button button-full center tright footer-stick">
-		<div class="container clearfix">
-			{{message.scontent}}  <i class="icon-caret-right" style="top:4px;"></i>
-		</div>
-	</a>
-	{% endwith %}
+{% include "my_content.html" %}
 {% endblock %}
 
 <!-- Footer
