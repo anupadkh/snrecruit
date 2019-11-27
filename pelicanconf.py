@@ -44,6 +44,7 @@ JINJA_FILTERS = {
                     'striptags':my_filters.strip_tags,
                     'find':my_filters.findarticle,
                     'findbyslug': my_filters.findbyslug,
+                    'findbytag': my_filters.findbytag,
                     'see': my_filters.see,
                     # 'make_list': my_filters.make_list,
 

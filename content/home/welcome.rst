@@ -1,7 +1,7 @@
 Welcome to SN RECRUITING SERVICE (P.) LTD.
 ##########################################
 
-:tags: welcome
+:tags: welcome, side
 :category: main
 :slug: welcome
 :date: 2019-11-03

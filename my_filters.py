@@ -75,6 +75,20 @@ def findbyslug(articles, slug):
             return y
     return None
 
+
+def findbytag(articles, tag):
+    collection = []
+    
+    for y in articles:
+        try:
+            if  tag in y.tags :
+                collection.append(y)
+                print(y.title)
+        except:
+            pass
+    return collection
+
+
 def see(value):
     print("Sarkar" + value)
     return value

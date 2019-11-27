@@ -3,7 +3,9 @@ STitle: SN Message
 Date: 2019-11-03
 Category: Message
 Slug: message-sn
+Tags: side
 Summary: S.N Recruiting service (P) Ltd is established by a team of dedicated and committed professionals with a mission to uplift the living standard of the needy Nepalese people by recruiting them with the decent and well paid overseas jobs.
+Image: /images/chairman_sn.jpg
 
 
 

@@ -5,5 +5,6 @@ Category: main
 Slug: partner
 Summary: Partners of SN Recruit
 Tags: partner
+Image: /images/chairman_sn.jpg
 
 Hello Buddy
