@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block header %}
-{% include "header2.html" %}
+{% include "header.html" %}
 {% endblock %}
 {% block content %}
-<section id="page-title">
+<div class="container clearfix">
+	<section id="page-title">
 				<h1>{{page.title}}</h1>
 				<span>{{page.stitle}}</span>
 				<ol class="breadcrumb">
@@ -12,10 +13,11 @@
 				</ol>
 		</section><!-- #page-title end -->
 
-
-    <div class="col_three_fifth">
+	<div class="container">
+    <div class="{% if page.image %}col_three_fifth {% else %} col_full {% endif %}">
       {{page.content}}
     </div>
-    <div class="col_two_fifth col_last portfolio-image"><img src="{{page.image}}" alt="{{page.description}}"/></div>
-
+	<div class="col_two_fifth col_last portfolio-image"><img src="{{page.image}}" alt="{{page.description}}"/></div>
+	</div>
+</div>
 {% endblock %}

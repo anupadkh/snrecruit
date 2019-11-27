@@ -5,6 +5,7 @@
       'message',
       'partner',
       'contact',
+      'documents_required',
     },
     'parents': {
       'message-sn': 'message',
