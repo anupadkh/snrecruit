@@ -74,7 +74,7 @@ def findimagelist(articles,slug):
     for y in articles:
         if y.slug == slug:
             return y.images_list.split(',')
-    return None
+    return []
 
 def findbyslug(articles, slug):
     for y in articles:
