@@ -3,5 +3,4 @@ output
 .vscode
 __pycache__
 list_of_articles1.json
-my_filters.pyc
 *.pyc

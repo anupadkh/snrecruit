@@ -69,6 +69,13 @@ def make_list(articles, pages, category, tags):
 def strip_tags(text):
     return re.sub('<[^<]+?>', '', text)
 
+
+def findimagelist(articles,slug):
+    for y in articles:
+        if y.slug == slug:
+            return y.images_list.split(',')
+    return None
+
 def findbyslug(articles, slug):
     for y in articles:
         if y.slug == slug:

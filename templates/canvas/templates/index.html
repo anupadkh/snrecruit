@@ -68,15 +68,24 @@
 
 		<div class="clear"></div>
 		<div class="line"></div>
-		{% with partners=articles|findbytag(tag="partner") %}
-		<h4 class="center"></h4>
-
-		<ul class="clients-grid grid-6 bottommargin clearfix">
+		{% with partners=articles|findimagelist(slug="company_docs") %}
+		<h4 class="center">{{partners.title}}</h4>
+			<div class="container clearfix">
+			
+				<!-- <div class="postcontent nobottommargin"> -->
+					<div class="col_full masonry-thumbs grid-2" data-lightbox="gallery">
+		<!-- <ul class="clients-grid grid-6 bottommargin clearfix"> -->
+		
 			{% for art in partners %}
-			<li><a href="{{art.url}}"><img src="{{art.image}}" alt="{{art.stitle}}: Partners"></a></li>
+			<a href="/images/{{art}}" data-lightbox="gallery-item"><img class="image_fade" src="/images/{{art}}" alt="{{partners.title}}"></a>
+			<!-- <li><a href="#"><img src="/images/{{art}}" alt="{{partners.title}}"></a></li> -->
 			{% endfor %}
-		</ul>
-		{% endwith %}
+		<!-- </ul> -->
+				</div>
+			{% endwith %}
+			<!-- </div> -->
+		</div>
+		
 
 	</div>
 	{% with message=articles|findbyslug(slug="broadcast-message") %}

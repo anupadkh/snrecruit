@@ -46,6 +46,7 @@ JINJA_FILTERS = {
                     'findbyslug': my_filters.findbyslug,
                     'findbytag': my_filters.findbytag,
                     'see': my_filters.see,
+                    'findimagelist': my_filters.findimagelist,
                     # 'make_list': my_filters.make_list,
 
                     'main_menu': render_html.return_menu,
