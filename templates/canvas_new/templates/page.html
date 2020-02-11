@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block header %}
+{% include "header.html" %}
+{% endblock %}
+{% block content %}
+<div class="container clearfix">
+	<section id="page-title">
+				<h1>{{page.title}}</h1>
+				<span>{{page.stitle}}</span>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">{{page.title}}</li>
+				</ol>
+		</section><!-- #page-title end -->
+
+	<div class="container">
+    <div class="{% if page.image %}col_three_fifth {% else %} col_full {% endif %}">
+      {{page.content}}
+    </div>
+	<div class="col_two_fifth col_last portfolio-image"><img src="{{page.image}}" alt="{{page.description}}"/></div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+<div id="top-bar">
+
+			<div class="container clearfix">
+
+				<div class="col_half nobottommargin">
+
+					<!-- Top Links
+					============================================= -->
+					<div class="top-links">
+						<ul class="sf-js-enabled clearfix" style="touch-action: pan-y;">
+							{% for a in 'a'|main_menu(menu_type='top_menu') %} <li><a href="{{a.url}}">{{a.stitle}}</a></li> {% endfor %}
+							<!-- <li><a href="login-register.html" class="sf-with-ul">Login</a>
+								 <div class="top-link-section" style="display: none;">
+									<form id="top-login">
+										<div class="input-group" id="top-login-username">
+											<div class="input-group-prepend">
+												<div class="input-group-text"><i class="icon-user"></i></div>
+											</div>
+											<input type="email" class="form-control" placeholder="Email address" required="">
+										</div>
+										<div class="input-group" id="top-login-password">
+											<div class="input-group-prepend">
+												<div class="input-group-text"><i class="icon-key"></i></div>
+											</div>
+											<input type="password" class="form-control" placeholder="Password" required="">
+										</div>
+										<label class="checkbox">
+										  <input type="checkbox" value="remember-me"> Remember me
+										</label>
+										<button class="btn btn-danger btn-block" type="submit">Sign in</button>
+									</form>
+								</div>
+							</li> -->
+						</ul>
+					</div><!-- .top-links end -->
+
+				</div>
+
+				<div class="col_half fright col_last nobottommargin">
+
+					<!-- Top Social
+					============================================= -->
+					<div id="top-social">
+						<ul>
+							{% for a in 'a'|main_menu(menu_type='social_menu') %} <li><a href="{{a.url}}" class="si-{{a.stitle|lower}}" title="{{a.stitle}}" data-hover-width="108.80706787109375" style="width: 40px;">
+								<i class="{{a.stitle|lower}}"></i></span><span class="ts-text">{{a.stitle}}</span>
+							</a></li>
+							{% endfor %}
+							{% for a in 'a'|main_menu(menu_type='contact_menu') %}
+							{% endfor %}
+							<li><a href="tel:+91.11.85412542" class="si-call" title="+91.11.85412542" data-hover-width="156.22554779052734" style="width: 40px;"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+91.11.85412542</span></a></li>
+							<li><a href="mailto:info@canvas.com" class="si-email3" title="info@canvas.com" data-hover-width="152.9375" style="width: 40px;"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@canvas.com</span></a></li>
+						</ul>
+					</div><!-- #top-social end -->
+
+				</div>
+
+			</div>
+
+		</div>
