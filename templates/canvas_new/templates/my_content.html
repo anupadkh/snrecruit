@@ -129,45 +129,20 @@
 								data-nav="false" data-animate-in="slideInUp" data-animate-out="slideOutUp"
 								data-autoplay="5000" data-loop="true" data-stage-padding="5" data-margin="10"
 								data-items-sm="1" data-items-md="1" data-items-xl="1">
-
+								{% for y in articles|findbytag(tag="goals") %}
 								<div class="oc-item">
 									<div class="testimonial topmargin-sm">
 										<div class="testi-content">
-											<h3>Our Core Vision </h3>
-											<p>We set clear goals at the beginning of each tasks.</p>
+											<h3>{{y.title}}</h3>
+											{{y.content}}
 										</div>
 									</div>
 
-									<div class="testimonial topmargin-sm">
-										<div class="testi-content">
-											<h3>Our Strength </h3>
-											<p>Highly experienced and dedicated team of professionals. </p>
-											<p>Well-equipped office space with practical test facilities. </p>
-											<p>Wide range of selection opportunities in different fields. </p>
-											<p>Worldwide network. </p>
-											<p>A pool of valued and satisfied clients around the world.</p>
-										</div>
-									</div>
+									
 								</div>
+								{% endfor %}
 
-								<div class="oc-item">
-									<div class="testimonial topmargin-sm">
-
-										<div class="testi-content">
-											<h3>We Work </h3>
-											<ul>
-												<li>To work professionally and effectively.</li>
-												<li>To achieve deadlines and targets under all circumtances.</li>
-												<li>To deliver productivity and excellence.</li>
-												<li>To be responsible and committed.</li>
-												<li>To create a positive impact on the life of every individual who
-													work with us.</li>
-												<li>To empower people to help them growth.</li>
-											</ul>
-										</div>
-									</div>
-
-								</div>
+								
 							</div>
 						</div>
 
@@ -175,124 +150,38 @@
 				</div>
 
 				<div class="section nobottommargin clearfix">
+					{% with gal=articles|findbyslug(slug="destination") %}
 					<div class="heading-block center nobottomborder nobottommargin divcenter" style="max-width: 640px">
-						<h3 class="nott font-secondary t400" style="font-size: 36px;">Choose your Destination Country</h3>
+						<h3 class="nott font-secondary t400" style="font-size: 36px;">{{gal.title}}</h3>
 						<span></span>
 					</div>
+					{% endwith %}
 				</div>
 				
 				<div class="masonry-thumbs grid-4" data-lightbox="gallery">
-					{% with partners=articles|findimagelist(slug="destination") %}
+					{% with partners=articles|findimagelist(slug="company_docs") %}
 					{% for art in partners %}
 					<a href="/images/{{art.path}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art.path}}" alt="{{art.title}}"></a>
 					{% endfor %}
 					{% endwith %}
 				</div>
-<!-- 
-				<div class="section nomargin nobg clearfix">
-					<div class="container clearfix">
-						<div class="heading-block center nobottomborder divcenter" style="max-width: 640px">
-							<h3 class="nott font-secondary t400" style="font-size: 36px;">Our certificates</h3>
-							<span>we can provide</span>
-						</div>
-						<div class="row topmargin clearfix">
-							<div class="col-lg-5 d-none d-lg-block">
-								<img class="image_fade" src="images/rojgar_certificate.jpeg" />
-							</div>
-							<div class="col-lg-7 col-md-12">
-								<div class="row clearfix">
-									<div class="col-md-4 col-6">
-										<div class="iproduct">
-											<div class="product-image noshadow">
-												<a href="#"><img class="image_fade" src="images/rojgar_nabikaran.jpeg"
-														alt=""></a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
 
-						<div class="section dark parallax nomargin"
-							style="background-image: url('demos/pet/images/others/section-bg.jpg'); padding: 140px 0;"
-							data-bottom-top="background-position:0px 50px;"
-							data-top-bottom="background-position:0px -300px;">
-							<div class="container center clearfix">
-								<div class="row clearfix">
-									<div class="col-lg-6">
-										<div class="heading-block nobottomborder nobottommargin">
-											<div class="before-heading lowercase ls1"
-												style="color: #FFF; font-style: normal;">want to
-												Adopt your a best friend?</div>
-											<h3 class="nott font-secondary t400" style="font-size: 32px;">
-												Unconditional love is as close
-												as your nearest Shelter.</h3>
-											<a href="#"
-												class="button button-large button-circle button-border button-white button-light topmargin-sm noleftmargin">Get
-												a Pet Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="container topmargin-lg clearfix">
-							<div class="heading-block center nobottomborder divcenter" style="max-width: 640px">
-								<h3 class="nott font-secondary t400" style="font-size: 36px;">Need Help?</h3>
-								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius eum inventore
-									consectetur dolorum,
-									voluptatum possimus temporibus vel.</span>
-							</div>
-							<div class="row contact-properties clearfix">
-								<div class="col-md-4">
-									<a href="#"
-										style="background: url('demos/pet/images/help/1.jpg') no-repeat center center; background-size: cover;">
-										<div class="vertical-middle dark center">
-											<div class="heading-block nomargin noborder">
-												<h3 class="capitalize t400 font-secondary">Hire a Pet Sitter</h3>
-												<span style="margin-top: 100px; font-size: 17px; font-weight: 500;">
-													795 Folsom Ave, Suite 600<br>
-													San Francisco, CA 94107
-												</span>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-md-4">
-									<a href="#"
-										style="background: url('demos/pet/images/help/2.jpg') no-repeat center center; background-size: cover;">
-										<div class="vertical-middle dark center">
-											<div class="heading-block nomargin noborder">
-												<h3 class="capitalize t400 font-secondary">Report a Stray Dog</h3>
-												<span style="margin-top: 100px; font-size: 17px; font-weight: 500;">
-													call us<br>
-													+91-111-222-333
-												</span>
-											</div>
-										</div>
-									</a>
-								</div>
-								<div class="col-md-4">
-									<a href="#"
-										style="background: url('demos/pet/images/help/3.jpg') no-repeat center center; background-size: cover;">
-										<div class="vertical-middle dark center">
-											<div class="heading-block nomargin noborder">
-												<h3 class="capitalize t400 font-secondary">Report Harassment Dog
-												</h3>
-												<span style="margin-top: 100px; font-size: 17px; font-weight: 500;">
-													Email us<br>
-													info@canvas.com
-												</span>
-											</div>
-										</div>
-									</a>
-								</div>
-							</div>
-						</div>
-
-					</div> -->
-
-		</section><!-- #content end -->
-		<!-- </div> -->
+	</div>
+	<div class ="container">
+		<div class="section nobottommargin clearfix">
+			{% with gal=articles|findbyslug(slug="company_docs") %}
+			<div class="heading-block center nobottomborder nobottommargin divcenter" style="max-width: 640px">
+				<h3 class="nott font-secondary t400" style="font-size: 36px;">{{gal.title}}</h3>
+				<span></span>{% endwith %}
+			</div>
+		</div>
+		<div class="masonry-thumbs grid-4" data-lightbox="gallery">
+			{% with partners=articles|findimagelist(slug="company_docs") %}
+			{% for art in partners %}
+			<a href="/images/{{art.path}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art.path}}"
+					alt="{{art.title}}"></a>
+			{% endfor %}
+			{% endwith %}
+		</div>
 	</div>
 </section>
