@@ -173,46 +173,21 @@
 
 					</div>
 				</div>
-<!-- 
+
 				<div class="section nobottommargin clearfix">
 					<div class="heading-block center nobottomborder nobottommargin divcenter" style="max-width: 640px">
-						<h3 class="nott font-secondary t400" style="font-size: 36px;">places you wanna travel</h3>
+						<h3 class="nott font-secondary t400" style="font-size: 36px;">Choose your Destination Country</h3>
 						<span></span>
 					</div>
 				</div>
-
-				<div class="masonry-thumbs grid-6" data-big="3" data-lightbox="gallery">
-					<a href="demos/pet/images/gallery/1.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/1.jpg" alt="Gallery Thumb 1"></a>
-					<a href="demos/pet/images/gallery/2.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/2.jpg" alt="Gallery Thumb 2"></a>
-					<a href="demos/pet/images/gallery/3.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/3.jpg" alt="Gallery Thumb 3"></a>
-					<a href="demos/pet/images/gallery/4.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/4.jpg" alt="Gallery Thumb 4"></a>
-					<a href="demos/pet/images/gallery/5.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/5.jpg" alt="Gallery Thumb 5"></a>
-					<a href="demos/pet/images/gallery/6.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/6.jpg" alt="Gallery Thumb 6"></a>
-					<a href="demos/pet/images/gallery/7.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/7.jpg" alt="Gallery Thumb 7"></a>
-					<a href="demos/pet/images/gallery/8.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/8.jpg" alt="Gallery Thumb 8"></a>
-					<a href="demos/pet/images/gallery/9.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/9.jpg" alt="Gallery Thumb 9"></a>
-					<a href="demos/pet/images/gallery/10.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/10.jpg" alt="Gallery Thumb 10"></a>
-					<a href="demos/pet/images/gallery/11.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/11.jpg" alt="Gallery Thumb 11"></a>
-					<a href="demos/pet/images/gallery/12.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/12.jpg" alt="Gallery Thumb 12"></a>
-					<a href="demos/pet/images/gallery/13.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/13.jpg" alt="Gallery Thumb 13"></a>
-					<a href="demos/pet/images/gallery/14.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/14.jpg" alt="Gallery Thumb 14"></a>
-					<a href="demos/pet/images/gallery/15.jpg" data-lightbox="gallery-item"><img
-							src="demos/pet/images/gallery/thumbs/15.jpg" alt="Gallery Thumb 15"></a>
-				</div> -->
+				
+				<div class="masonry-thumbs grid-4" data-lightbox="gallery">
+					{% with partners=articles|findimagelist(slug="destination") %}
+					{% for art in partners %}
+					<a href="/images/{{art.path}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art.path}}" alt="{{art.title}}"></a>
+					{% endfor %}
+					{% endwith %}
+				</div>
 <!-- 
 				<div class="section nomargin nobg clearfix">
 					<div class="container clearfix">
