@@ -11,6 +11,7 @@ Icon: icon-hello
 | | |
 |:--- | :---:|
 |<h5>Company Name </h5>|<h5>S.N. Recruiting Service P.Ltd.</h5>|
+|topic|value|
 |Govt. License No.| 1284/074/75|
 |Chairman | Mr. Gokarna Babu Shrestha|
 |Contact No. | +977-9849307317|

@@ -1,0 +1,81 @@
+<div class="section dark nomargin">
+
+    <div class="container clearfix">
+        {% with side_nav = articles|findbytag(tag='side') %}
+        <div id="side-navigation">
+
+            <div class="col_one_third nobottommargin">
+
+                <ul class="sidenav">
+                    {% for art in side_nav %}
+                    <li><a href="#{{art.slug}}"><i class="{{art.icon}}"></i>{{art.stitle}}<i
+                                class="icon-chevron-right"></i></a></li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div class="col_two_third col_last nobottommargin">
+                {% for art in side_nav %}
+                <div id="{{art.slug}}">
+                    <div class="heading-block">
+                        <h3>{{art.title}}</h3>
+                        <span>{{art.stitle}}</span>
+                    </div>
+                    <img src="{{art.image}}" alt="{{art.image_desciption}}" class="alignleft" style="max-width: 320px;">
+                    {{art.content}}
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        {% endwith %}
+    </div>
+
+</div>
+
+<div class="clear"></div>
+<div class="line"></div>
+{% with partners=articles|findimagelist(slug="company_docs") %}
+<h4 class="center">{{partners.title}}</h4>
+<div class="container clearfix">
+
+    <!-- <div class="postcontent nobottommargin"> -->
+    <div class="col_full masonry-thumbs grid-4" data-lightbox="gallery">
+        <!-- <ul class="clients-grid grid-6 bottommargin clearfix"> -->
+
+        {% for art in partners %}
+        <a href="/images/{{art}}" data-lightbox="gallery-item"><img class="image_fade" src="/images/thumbnails/{{art}}"
+                alt="{{partners.title}}"></a>
+        <!-- <li><a href="#"><img src="/images/{{art}}" alt="{{partners.title}}"></a></li> -->
+        {% endfor %}
+        <!-- </ul> -->
+    </div>
+    {% endwith %}
+    <!-- </div> -->
+</div>
+<!-- 
+<div class="section nobottommargin clearfix">
+    {% with gal=articles|findbyslug(slug="company_docs") %}
+    <div class="heading-block center nobottomborder nobottommargin divcenter" style="max-width: 640px">
+        <h3 class="nott font-secondary t400" style="font-size: 36px;">{{gal.title}}</h3>
+        <span></span>{% endwith %}
+    </div>
+</div>
+
+<div class="masonry-thumbs grid-4 clearfix" data-lightbox="gallery">
+    {% with partners=articles|findimagelist(slug="company_docs") %}
+    {% for art in partners %}
+    <a href="/images/{{art}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art}}" alt="{{art.title}}"
+            class="clearfix"></a>
+    {% endfor %}
+    {% endwith %}
+</div> -->
+<!-- <div class="masonry-thumbs grid-4" data-lightbox="gallery" data-big="3">
+    {% with partners=articles|findimagelist(slug="destination") %}
+    {% for art in partners %}
+    <a href="/images/{{art}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art}}"
+            alt="{{art.title}}" class="clearfix"></a>
+    {% endfor %}
+    {% endwith %}
+</div> -->

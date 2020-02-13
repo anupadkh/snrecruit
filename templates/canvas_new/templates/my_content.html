@@ -81,7 +81,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="container topmargin clearfix">
+				<div class=" section container topmargin clearfix">
 					<div class="row clearfix">
 						<div class="col-lg-6">
 							<div class="heading-block nobottomborder topmargin-sm nobottommargin">
@@ -138,11 +138,11 @@
 										</div>
 									</div>
 
-									
+
 								</div>
 								{% endfor %}
 
-								
+
 							</div>
 						</div>
 
@@ -157,31 +157,28 @@
 					</div>
 					{% endwith %}
 				</div>
-				
-				<div class="masonry-thumbs grid-4" data-lightbox="gallery">
-					{% with partners=articles|findimagelist(slug="company_docs") %}
-					{% for art in partners %}
-					<a href="/images/{{art.path}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art.path}}" alt="{{art.title}}"></a>
-					{% endfor %}
-					{% endwith %}
-				</div>
 
-	</div>
-	<div class ="container">
-		<div class="section nobottommargin clearfix">
-			{% with gal=articles|findbyslug(slug="company_docs") %}
-			<div class="heading-block center nobottomborder nobottommargin divcenter" style="max-width: 640px">
-				<h3 class="nott font-secondary t400" style="font-size: 36px;">{{gal.title}}</h3>
-				<span></span>{% endwith %}
+				<div class="masonry-thumbs grid-3" data-lightbox="gallery">
+					<div class="row clearfix">
+						{% with partners=articles|findimagelist(slug="destination") %}
+						{% for art in partners %}
+						<div class="col-lg-3 col-md-6 bottommargin-sm">
+							<div class="feature-box media-box fbox-bg">
+								<div class="fbox-media">
+									<a href="#"><img class="image_fade" src="/images/thumbnails/{{art}}"
+											alt="Featured Box Image"></a>
+								</div>
+								<div class="fbox-desc noborder">
+									<h3 class="nott ls0 t600">{{art.title}}<span class="subtitle t300 ls0"></span></h3>
+									<a href="#" class="button-link noborder color">Show More</a>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+						{% endwith %}
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="masonry-thumbs grid-4" data-lightbox="gallery">
-			{% with partners=articles|findimagelist(slug="company_docs") %}
-			{% for art in partners %}
-			<a href="/images/{{art.path}}" data-lightbox="gallery-item"><img src="/images/thumbnails/{{art.path}}"
-					alt="{{art.title}}"></a>
-			{% endfor %}
-			{% endwith %}
-		</div>
+		</section>
 	</div>
 </section>

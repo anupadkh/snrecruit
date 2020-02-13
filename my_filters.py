@@ -75,10 +75,15 @@ class myImage:
     meta = ''
 
     def __init__(self, title, path, meta=None):
+        super().__init__()
+        print(path + title)
+        self.title = title
+        self.path = path
         if meta == None:
+            print(path + title)
             self.title = title
             self.path = path
-            if self.meta != None:
+        else:
                 self.meta = meta
         
 
@@ -86,6 +91,7 @@ def findimagelist(articles,slug):
     for y in articles:
         if y.slug == slug:
             images = []
+            IMAGE_SRC =[]
             try:
                 images_title = y.images_title.split(',')
                 # print(images_title)
@@ -93,9 +99,12 @@ def findimagelist(articles,slug):
                 return y.images_list.split(',')
             images_path = y.images_list.split(',')
             for x in range(len(images_path)):
-                images.append(myImage(title=images_title[x], path=y.image_path + images_path[x]))
-            # print (images)
-            return images
+                images.append(myImage(images_title[x], y.image_path + images_path[x]))
+                IMAGE_SRC.append(y.image_path + images_path[x])
+
+            
+            # return images
+            return IMAGE_SRC
     return []
 
 def findbyslug(articles, slug):
