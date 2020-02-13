@@ -86,8 +86,8 @@ class myImage:
         else:
                 self.meta = meta
         
-
-def findimagelist(articles,slug):
+import math
+def findimagelist(articles,slug, multiple = 4):
     for y in articles:
         if y.slug == slug:
             images = []
@@ -98,7 +98,7 @@ def findimagelist(articles,slug):
             except:
                 return y.images_list.split(',')
             images_path = y.images_list.split(',')
-            for x in range(len(images_path)):
+            for x in range(math.floor(len(images_path)/multiple)*multiple):
                 images.append(myImage(images_title[x], y.image_path + images_path[x]))
                 IMAGE_SRC.append(y.image_path + images_path[x])
 
